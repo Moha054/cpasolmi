@@ -16,13 +16,17 @@
 
 
 /* ---------- 1. Theme ---------- */
+
+/* الالوان الي في الملف:
+   violet #6600FF, green #45D683, text #3D3D3D
+   Page background: pearl white #FAF8F5 */
 :root {
   --violet:       #6600FF;
-  --violet-dark:  #5200CC;   
-  --green:        #1E9E57;   
-  --green-bright: #45D683;  
+  --violet-dark:  #5200CC;   /* darker violet for names and small headings */
+  --green:        #1E9E57;   /* darker green, so green text stays readable */
+  --green-bright: #45D683;   /* the profile's green, used for lines, dots and fills */
 
-  --page:         #FAF8F5;   /* pearl white تقريبا */
+  --page:         #FAF8F5;   /* pearl white */
   --card:         #FFFFFF;
   --soft:         #EFE7FF;
   --text:         #3D3D3D;
@@ -31,7 +35,7 @@
   --on-violet:    #FFFFFF;
   --on-green:     #FFFFFF;
 
-  color-scheme: light;   
+  color-scheme: light;   /* light design only, no dark mode */
 
   /* Arabic is the default language */
   --font-heading: "Readex Pro", "IBM Plex Sans Arabic", system-ui, sans-serif;
@@ -135,7 +139,7 @@ a {
   color: var(--on-green);
 }
 
-/* Small secondary button (copy number and directions) */
+/* Small secondary button (copy number, directions) */
 .small-button {
   padding: 7px 14px;
   border: 1.5px solid var(--border);
@@ -154,7 +158,7 @@ a {
 
 /* ---------- 3. Header ---------- */
 
-/* Covers the phone status bar area above the sticky header */
+/* Covers the phone's status bar area above the sticky header */
 body::before {
   content: "";
   position: fixed;
@@ -206,7 +210,7 @@ body::before {
   line-height: 1.3;
 }
 
-/* Short company name, used only on phones in English */
+/* Short company name, used only on phones in English (the full name is too long) */
 .logo-name--short {
   display: none;
 }
@@ -245,7 +249,7 @@ html {
   white-space: nowrap;   /* keep each menu item on one line */
 }
 
-/* Medium screens tighter menu, and the long company name drops the tagline */
+/* Medium screens: tighter menu, and the long company name drops the tagline */
 @media (max-width: 1180px) {
   .menu { gap: 16px; }
   .menu a { font-size: 14px; }
@@ -256,7 +260,7 @@ html {
   color: var(--violet);
 }
 
-/* LinkedIn button stays visible on phones too */
+/* LinkedIn button: stays visible on phones too */
 .linkedin-link {
   display: inline-flex;
   flex: none;
@@ -272,7 +276,7 @@ html {
   object-fit: contain;
 }
 
-/* Header buttons keep their size on narrow phones the company name wraps instead */
+/* Header buttons keep their size; on narrow phones the company name wraps instead */
 .menu > .linkedin-link,
 .menu > .language-button,
 .menu > .menu-button {
@@ -308,7 +312,7 @@ html {
   gap: inherit;
 }
 
-/* Menu button hidden on large screens */
+/* Menu button three lines, hidden on large screens */
 .menu-button {
   display: none;
   flex-direction: column;
@@ -331,7 +335,7 @@ html {
   transition: transform 0.2s, opacity 0.2s;
 }
 
-/* Lines turn into an X when the menu is open */
+/* Lines turn into an X while the menu is open */
 .menu-button[aria-expanded="true"] span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
 .menu-button[aria-expanded="true"] span:nth-child(2) { opacity: 0; }
 .menu-button[aria-expanded="true"] span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
@@ -433,7 +437,7 @@ html {
   margin-top: 32px;
 }
 
-/* The crossing lines from the logo drawn large */
+/* The crossing lines from the logo, drawn large */
 .hero-graphic {
   justify-self: center;
   width: 100%;
@@ -448,7 +452,7 @@ html {
 .hero-graphic .violet { stroke: var(--violet); }
 .hero-graphic .green  { stroke: var(--green-bright); }
 
-/* Lines draw themselves on page load */
+/* Lines draw themselves on page load (skipped if the viewer prefers less motion) */
 @media (prefers-reduced-motion: no-preference) {
   .hero-graphic line {
     stroke-dasharray: 400;
@@ -534,7 +538,7 @@ html {
 }
 
 
-/* ---------- 6. Sections  ---------- */
+/* ---------- 6. Sections (shared) ---------- */
 
 .section {
   padding-block: 80px;
@@ -579,15 +583,16 @@ html {
 .service-icon {
   display: grid;
   place-items: center;
-  width: 44px;
-  height: 44px;
-  border-radius: 12px;
+  width: 68px;
+  height: 68px;
+  border-radius: 20px;
   background: var(--soft);
+  box-shadow: inset 0 0 0 1.5px color-mix(in srgb, var(--violet) 18%, transparent);
 }
 
 .service-icon svg {
-  width: 22px;
-  height: 22px;
+  width: 34px;
+  height: 34px;
   fill: none;
   stroke: var(--violet);
   stroke-width: 2;
@@ -597,6 +602,23 @@ html {
 
 .service h3 {
   font-size: 19px;
+}
+
+/* Centered cards: icon and heading in the middle.
+   To go back to right-aligned cards, remove "cards centered" from the grid in index.html */
+.cards--centered .service {
+  align-items: center;
+  text-align: center;
+}
+
+.cards--centered .service-icon {
+  margin-bottom: 4px;
+}
+
+/* Bullet lists stay aligned to the side so they remain easy to read */
+.cards--centered .service ul {
+  align-self: stretch;
+  text-align: start;
 }
 
 .service p {
@@ -639,7 +661,7 @@ html {
 
 /* ---------- 8. Filing calendar ---------- */
 
-/* Calendar and vision sections plain white band between the pearl sections */
+/* Calendar and vision sections: plain white band between the pearl sections */
 .calendar {
   background: var(--card);
   border-block: 1px solid var(--border);
@@ -868,7 +890,7 @@ html {
   font-size: 13px;
 }
 
-/* Email address always reads left to right even on the Arabic page */
+/* Email address always reads left to right, even on the Arabic page */
 .email-address {
   direction: ltr;
   unicode-bidi: isolate;
@@ -876,7 +898,7 @@ html {
   font-weight: 500;
 }
 
-/* Phone number always reads left to right even on the Arabic page */
+/* Phone number always reads left to right, even on the Arabic page */
 .phone-number {
   direction: ltr;
   unicode-bidi: isolate;
@@ -895,7 +917,7 @@ html {
 
 /* ---------- 10b. Message form ---------- */
 
-/* The form lives inside the contact card under a thin divider */
+/* The form lives inside the contact card, under a thin divider */
 .form-heading {
   padding-top: 18px;
   border-top: 1px solid var(--border);
@@ -1044,7 +1066,7 @@ html {
     align-items: center;
   }
 
-  /* Calendar table becomes one card per return no sideways scrolling */
+  /* Calendar table becomes one card per return, no sideways scrolling */
   .calendar table {
     min-width: 0;
   }
@@ -1076,7 +1098,7 @@ html {
 }
 
 
-/* small phones (320–360px) slightly smaller header so the name stays on two lines */
+/* Very small phones (320–360px): slightly smaller header so the name stays on two lines */
 @media (max-width: 360px) {
   .logo { gap: 8px; }
   .logo img { width: 40px; }
