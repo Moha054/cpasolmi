@@ -570,7 +570,7 @@ html {
 .section-intro h2,
 .about h2,
 .contact h2 {
-  font-size: clamp(26px, 3.4vw, 36px);
+  font-size: clamp(22px, 2.4vw, 28px);
 }
 
 .section-intro p {
