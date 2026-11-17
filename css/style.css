@@ -94,7 +94,7 @@ a {
   align-items: center;
   gap: 10px;
   color: var(--green);
-  font: 600 13px var(--font-heading);
+  font: 600 15px var(--font-heading);
   letter-spacing: 0.06em;
   text-transform: uppercase;
 }
@@ -116,7 +116,7 @@ a {
   padding: 13px 22px;
   border: 1.5px solid var(--violet);
   border-radius: 12px;
-  font: 600 15.5px var(--font-heading);
+  font: 600 16.5px var(--font-heading);
   text-decoration: none;
 }
 
@@ -146,7 +146,7 @@ a {
   border-radius: 10px;
   background: var(--page);
   color: var(--text);
-  font: 600 13.5px var(--font-heading);
+  font: 600 15px var(--font-heading);
   text-decoration: none;
   cursor: pointer;
 }
@@ -297,7 +297,7 @@ html {
   border-radius: 999px;
   background: transparent;
   color: var(--violet);
-  font: 600 14px var(--font-heading);
+  font: 600 15px var(--font-heading);
   cursor: pointer;
 }
 
@@ -407,7 +407,7 @@ html {
 
 .hero .container {
   display: grid;
-  grid-template-columns: 1.25fr 0.75fr;
+  grid-template-columns: 1fr 1fr;
   gap: 48px;
   align-items: center;
   padding-block: 72px 64px;
@@ -441,7 +441,8 @@ html {
 .hero-graphic {
   justify-self: center;
   width: 100%;
-  max-width: 380px;
+  max-width: 500px;
+  height: auto;
 }
 
 .hero-graphic line {
@@ -477,7 +478,7 @@ html {
 
   .hero-graphic {
     order: -1;
-    max-width: 220px;
+    max-width: 420px;
   }
 }
 
@@ -499,7 +500,7 @@ html {
   flex-direction: column;
   align-items: flex-start;
   gap: 10px;
-  padding-block: 22px;
+  padding-block: 24px;
   padding-inline: 20px;
   border-inline-start: 1px solid var(--border);
 }
@@ -521,12 +522,17 @@ html {
   display: block;
   color: var(--violet-dark);
   font-family: var(--font-heading);
-  font-size: 15.5px;
+  font-size: 18px;
+  line-height: 1.4;
 }
 
 .highlight span {
+  display: block;
+  margin-top: 2px;
   color: var(--text-muted);
   font-size: 14px;
+  line-height: 1.6;
+  text-wrap: balance;
 }
 
 /* Two columns on phones */
@@ -712,7 +718,7 @@ html {
 .calendar th {
   background: var(--card);
   color: var(--text-muted);
-  font: 600 13px var(--font-heading);
+  font: 600 14.5px var(--font-heading);
   letter-spacing: 0.04em;
 }
 
@@ -733,7 +739,7 @@ html {
   background: #E3F8EC;   /* fallback for older browsers */
   background: color-mix(in srgb, var(--green-bright) 18%, transparent);
   color: var(--green);
-  font: 600 12.5px var(--font-heading);
+  font: 600 14px var(--font-heading);
 }
 
 .disclaimer {
@@ -963,7 +969,7 @@ html {
 
 .field label {
   color: var(--text-muted);
-  font: 600 13.5px var(--font-heading);
+  font: 600 15px var(--font-heading);
 }
 
 .field input,
@@ -1042,7 +1048,7 @@ html {
   }
 
   .hero-graphic {
-    max-width: 160px;
+    max-width: 340px;
   }
 
   .hero p {
