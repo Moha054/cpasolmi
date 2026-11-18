@@ -196,9 +196,19 @@ body::before {
 }
 
 .logo img {
-  flex: none;
-  width: 64px;
+  flex: 0 1 auto;
+  width: 300px;
+  max-width: 100%;
   height: auto;
+}
+
+.logo .logo-en,
+:root[lang="en"] .logo .logo-ar {
+  display: none;
+}
+
+:root[lang="en"] .logo .logo-en {
+  display: block;
 }
 
 .logo-name {
@@ -347,7 +357,7 @@ html {
   }
 
   .logo img {
-    width: 52px;
+    width: 240px;
   }
 
   .logo-name {
@@ -1119,7 +1129,7 @@ html {
 /* Very small phones (320–360px): slightly smaller header so the name stays on two lines */
 @media (max-width: 360px) {
   .logo { gap: 8px; }
-  .logo img { width: 40px; }
+  .logo img { width: 200px; }
   .logo-name { font-size: 13px; }
   .menu { gap: 8px; }
   .language-button { padding: 6px 12px; font-size: 13px; }
