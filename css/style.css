@@ -539,7 +539,7 @@ html {
 .highlight span {
   display: block;
   margin-top: 2px;
-  color: var(--text-muted);
+  color: var(--violet);
   font-size: 14px;
   line-height: 1.6;
   text-wrap: balance;
