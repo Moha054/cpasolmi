@@ -530,7 +530,7 @@ html {
 
 .highlight strong {
   display: block;
-  color: var(--violet-dark);
+  color: var(--violet);
   font-family: var(--font-heading);
   font-size: 18px;
   line-height: 1.4;
